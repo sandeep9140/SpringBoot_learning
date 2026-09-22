@@ -1,0 +1,16 @@
+2026-09-22T02:31:48.968+05:30  INFO 928 --- [My-project2] [main] o.s.boot.SpringApplication               : ┌─────────────────────────────────────────────┐
+│                                             │
+│   ███████╗ █████╗ ███╗   ██╗               │
+│   ██╔════╝██╔══██╗████╗  ██║               │
+│   ███████╗███████║██╔██╗ ██║               │
+│   ╚════██║██╔══██║██║╚██╗██║               │
+│   ███████║██║  ██║██║ ╚████║               │
+│   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝               │
+│                                             │
+│          S A N D E E P  C H A U R A S I Y A │
+│                                             │
+└─────────────────────────────────────────────┘
+
+2026-09-22T02:31:49.046+05:30  INFO 928 --- [My-project2] [main] com.sandeep.demo.MyProject2Application   : Starting MyProject2Application using Java 21.0.12.1 with PID 928 (D:\sts\My-project2\target\classes started by sandeep in D:\sts\My-project2)
+2026-09-22T02:31:49.048+05:30  INFO 928 --- [My-project2] [main] com.sandeep.demo.MyProject2Application   : No active profile set, falling back to 1 default profile: "default"
+2026-09-22T02:31:49.758+05:30  INFO 928 --- [My-project2] [main] com.sandeep.demo.MyProject2Application   : Started MyProject2Application in 1.332 seconds (process running for 1.776)
