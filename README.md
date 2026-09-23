@@ -93,3 +93,20 @@ public class EmailSender {
         System.out.println("Email Sent");
     }
 }
+
+
+
+=======================================================================================================
+
+# Spring Boot - JPA, CrudRepository & Dependency Injection
+
+This repository contains my learning notes and practice code for important Spring Boot and Spring Data JPA concepts.
+
+## 📚 Topics Covered
+
+### 1. `spring.jpa.hibernate.ddl-auto`
+
+This property controls how Hibernate manages the database schema when the Spring Boot application starts.
+
+properties
+spring.jpa.hibernate.ddl-auto=update
