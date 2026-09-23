@@ -110,3 +110,39 @@ This property controls how Hibernate manages the database schema when the Spring
 
 properties
 spring.jpa.hibernate.ddl-auto=update
+
+
+
+===================================================================================================
+==================================================================================================
+
+# Spring Data JPA - CrudRepository
+
+This project demonstrates the basic use of `CrudRepository` in Spring Boot with Spring Data JPA.
+
+## 📚 What is CrudRepository?
+
+`CrudRepository` is an interface provided by **Spring Data** that provides ready-made methods for basic database operations.
+
+CRUD means:
+
+- **C** → Create
+- **R** → Read
+- **U** → Update
+- **D** → Delete
+
+We don't need to write the implementation of these basic methods manually. Spring Data provides them automatically.
+
+---
+
+## 🔹 Creating Repository
+
+```java
+package com.sandeep.repo;
+
+import org.springframework.data.repository.CrudRepository;
+import com.sandeep.entities.Students;
+
+public interface StudentRepo extends CrudRepository<Students, Integer> {
+
+}
