@@ -146,3 +146,58 @@ import com.sandeep.entities.Students;
 public interface StudentRepo extends CrudRepository<Students, Integer> {
 
 }
+
+
+=============================================================================================================
+=============================================================================================================
+
+
+# 🚀 Spring Boot Learning Journey — Day 4
+
+## 📚 JPA Automatic ID Generation & CRUD Repository Operations
+
+Day 4 of my Spring Boot learning journey.
+
+Today I focused on two important areas:
+
+1. **Automatic ID Generation using JPA**
+2. **Basic CRUD operations using `CrudRepository`**
+
+---
+
+# 📌 Topics Covered
+
+- `@Id`
+- `@GeneratedValue`
+- `GenerationType`
+- `GenerationType.IDENTITY`
+- Automatic ID generation with MySQL
+- `CrudRepository`
+- `save()`
+- `delete(entity)`
+- `deleteById(id)`
+- Basic JPA + Hibernate + Database flow
+
+---
+
+# 1️⃣ Automatic ID Generation
+
+When inserting a new record into a database, we usually don't want the user to manually provide the ID.
+
+JPA can automatically generate the ID for us.
+
+### Example
+
+```java
+@Entity
+public class Student {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    private String name;
+    private String email;
+
+    // Getters and Setters
+}
