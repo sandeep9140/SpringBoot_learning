@@ -201,3 +201,59 @@ public class Student {
 
     // Getters and Setters
 }
+===================================================================================
+===================================================================================
+
+
+# 🚀 Spring Boot — JpaRepository CRUD Operations
+
+<p align="center">
+  <b>Spring Boot + Spring Data JPA + Hibernate + MySQL</b>
+</p>
+
+<p align="center">
+  A beginner-friendly project demonstrating database operations using 
+  <b>JpaRepository</b>.
+</p>
+
+---
+
+## 🟢 Project Overview
+
+This project demonstrates how to use **Spring Data JPA's `JpaRepository`**
+with a Spring Boot application to perform database operations on an
+**Employee** entity.
+
+### 🛠️ Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| ☕ Java | Programming Language |
+| 🌱 Spring Boot | Application Framework |
+| 🗄️ Spring Data JPA | Database Access |
+| ⚡ Hibernate | ORM Framework |
+| 🐬 MySQL | Database |
+| 📦 Maven | Dependency Management |
+
+---
+
+## 🏗️ Project Structure
+
+```text
+📦 MyProject11
+│
+└── 📂 src/main/java/com/sandeep
+    │
+    ├── 🚀 MyProject11Application.java
+    │
+    ├── 📂 entities
+    │   └── 👤 Employee.java
+    │
+    ├── 📂 repo
+    │   └── 🗃️ EmployeeRepo.java
+    │
+    ├── 📂 service
+    │   └── ⚙️ EmployeeService.java
+    │
+    └── 📂 serviceImp
+        └── 🔧 EmployeeServiceImpl.java
