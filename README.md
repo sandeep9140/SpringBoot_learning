@@ -257,3 +257,65 @@ with a Spring Boot application to perform database operations on an
     │
     └── 📂 serviceImp
         └── 🔧 EmployeeServiceImpl.java
+
+
+
+
+
+
+=====================================================================
+
+=======================================================================
+
+
+
+# 🚀 Spring Boot Learning Journey — Day 5
+
+## 📚 Multiple Records, Pagination & Sorting
+
+Day 5 of my Spring Boot learning journey.
+
+Today I focused on working with **multiple records in a database** and learned how **Pagination and Sorting** can be used with Spring Data JPA to retrieve data in an organized way.
+
+---
+
+# 📌 Topics Covered
+
+- Inserting multiple records into the database
+- Automatic ID generation
+- `@Id`
+- `@GeneratedValue`
+- `GenerationType.IDENTITY`
+- `Page`
+- `Pageable`
+- `PageRequest`
+- Pagination
+- Sorting
+- Pagination + Sorting together
+- Page number
+- Page size
+- Total pages
+- Total elements
+- Getting page content
+
+---
+
+# 1️⃣ Multiple Records in Database
+
+Instead of inserting only one record, we can save multiple entities into the database.
+
+Example:
+
+```java
+Student s1 = new Student();
+s1.setName("Rahul");
+
+Student s2 = new Student();
+s2.setName("Aman");
+
+Student s3 = new Student();
+s3.setName("Rohit");
+
+studentRepo.save(s1);
+studentRepo.save(s2);
+studentRepo.save(s3);
