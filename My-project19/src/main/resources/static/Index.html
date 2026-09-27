@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Product Search</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+
+        .container {
+            width: 700px;
+            margin: 60px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input {
+            padding: 12px;
+            margin: 5px;
+            width: 200px;
+        }
+
+        button {
+            padding: 12px 25px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 30px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Product Search</h1>
+
+    <div>
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Product Name">
+
+        <input
+            type="text"
+            id="category"
+            placeholder="Category">
+
+        <button onclick="searchProduct()">
+            Search
+        </button>
+
+    </div>
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+            </tr>
+
+        </thead>
+
+        <tbody id="result">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
+<script>
+
+function searchProduct() {
+
+    let name =
+        document.getElementById("name").value;
+
+    let category =
+        document.getElementById("category").value;
+
+    alert(
+        "Search Product\n\n" +
+        "Name: " + name +
+        "\nCategory: " + category
+    );
+}
+
+</script>
+
+</body>
+
+</html>

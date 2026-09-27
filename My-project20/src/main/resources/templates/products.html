@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Product Management</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        .navbar {
+            background: #1f2937;
+            color: white;
+            padding: 18px 40px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        input,
+        select {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        input {
+            flex: 1;
+            min-width: 180px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .add-btn {
+            background: #2563eb;
+            color: white;
+        }
+
+        .search-btn {
+            background: #111827;
+            color: white;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 14px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #f1f5f9;
+        }
+
+        .pagination {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .page-btn {
+            background: #2563eb;
+            color: white;
+        }
+
+        .disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .empty {
+            text-align: center;
+            padding: 30px;
+            color: #777;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+    🛒 Product Management System
+</div>
+
+
+
+<div class="container">
+
+
+    <!-- ADD PRODUCT -->
+
+    <div class="card">
+
+        <h2>Add New Product</h2>
+
+        <form action="/save" method="post">
+
+            <div class="form-row">
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Product Name"
+                    required>
+
+                <input
+                    type="text"
+                    name="model"
+                    placeholder="Product Model"
+                    required>
+
+                <input
+                    type="number"
+                    name="price"
+                    placeholder="Price"
+                    required>
+
+                <button
+                    type="submit"
+                    class="add-btn">
+
+                    + Add Product
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+
+    <!-- SEARCH -->
+
+    <div class="card">
+
+        <h2>Search & Sort</h2>
+
+        <form>
+
+            <div class="form-row">
+
+                <input
+                    type="text"
+                    name="keyword"
+                    placeholder="Search product by name...">
+
+                <select name="sortBy">
+
+                    <option value="id">
+                        Sort by ID
+                    </option>
+
+                    <option value="name">
+                        Sort by Name
+                    </option>
+
+                    <option value="price">
+                        Sort by Price
+                    </option>
+
+                </select>
+
+                <button
+                    type="submit"
+                    class="search-btn">
+
+                    🔍 Search
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+
+    <!-- PRODUCT TABLE -->
+
+    <div class="card">
+
+        <h2>Product List</h2>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Product Name</th>
+
+                    <th>Model</th>
+
+                    <th>Price</th>
+
+                </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                <!-- Dynamic Database Data -->
+
+                <tr th:each="product : ${products}">
+
+                    <td th:text="${product.id}">
+                        ID
+                    </td>
+
+                    <td th:text="${product.name}">
+                        Product Name
+                    </td>
+
+                    <td th:text="${product.model}">
+                        Model
+                    </td>
+
+                    <td th:text="${product.price}">
+                        Price
+                    </td>
+
+                </tr>
+
+
+                <!-- If No Products -->
+
+                <tr th:if="${#lists.isEmpty(products)}">
+
+                    <td colspan="4" class="empty">
+
+                        No Products Found
+
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+
+        <!-- PAGINATION -->
+
+        <div class="pagination">
+
+            <button class="page-btn">
+
+                ← Previous
+
+            </button>
+
+
+            <span>
+
+                Page <b>1</b> of <b>1</b>
+
+            </span>
+
+
+            <button class="page-btn">
+
+                Next →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>
