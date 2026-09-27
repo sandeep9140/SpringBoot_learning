@@ -319,3 +319,56 @@ s3.setName("Rohit");
 studentRepo.save(s1);
 studentRepo.save(s2);
 studentRepo.save(s3);
+
+
+==============================================================================================
+==============================================================================================
+# JPQL / HQL in Spring Data JPA
+
+This project demonstrates the basics of **JPQL (Java Persistence Query Language)** and **HQL (Hibernate Query Language)** using Spring Data JPA.
+
+The project focuses on writing custom queries with `@Query`, using parameters, applying conditions, sorting, and understanding how JPQL works with entities and their fields.
+
+---
+
+## 📌 Topics Covered
+
+- JPQL
+- HQL
+- SQL vs JPQL
+- `@Query`
+- Entity names in JPQL
+- Entity field names in JPQL
+- Positional Parameters
+- Named Parameters
+- `@Param`
+- Multiple Conditions
+- `AND` / `OR`
+- `ORDER BY`
+- `ASC` / `DESC`
+- Update Query
+- Delete Query
+- Query Result Handling
+- Practical debugging of JPQL queries
+
+---
+
+## 🔹 What is JPQL?
+
+JPQL stands for:
+
+**Java Persistence Query Language**
+
+JPQL is used to query JPA entities.
+
+Unlike SQL, JPQL works with:
+
+- Entity class names
+- Entity field names
+- Java objects
+
+### Example
+
+```java
+@Query("SELECT c FROM Course c WHERE c.cname = :mycname")
+Course getCourse(@Param("mycname") String mycname);
