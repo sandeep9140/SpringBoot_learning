@@ -372,3 +372,62 @@ Unlike SQL, JPQL works with:
 ```java
 @Query("SELECT c FROM Course c WHERE c.cname = :mycname")
 Course getCourse(@Param("mycname") String mycname);
+
+
+
+
+============================================================================================
+===============================================================================================
+# Spring Data JPA - Entity Relationships
+
+## 📌 Overview
+
+This project demonstrates different types of Entity Relationships in **Spring Data JPA / Hibernate** using Java and MySQL.
+
+The main goal of this project is to understand how multiple entities are connected with each other and how JPA manages these relationships in the database.
+
+---
+
+## 🛠️ Technologies Used
+
+- Java 21
+- Spring Boot
+- Spring Data JPA
+- Hibernate
+- MySQL
+- Maven
+- IntelliJ IDEA / Eclipse
+
+---
+
+# 📚 Topics Covered
+
+This project covers:
+
+1. One-to-One Relationship
+2. One-to-One Unidirectional
+3. One-to-One Bidirectional
+4. One-to-Many Relationship
+5. Many-to-One Relationship
+6. One-to-Many Bidirectional
+7. Many-to-Many Relationship
+8. Many-to-Many Unidirectional
+9. Many-to-Many Bidirectional
+10. `@JoinColumn`
+11. `@JoinTable`
+12. `mappedBy`
+13. Owning Side
+14. Inverse Side
+15. Join Table
+16. Foreign Keys
+
+---
+
+# 1️⃣ One-to-One Relationship
+
+In a One-to-One relationship, one record of an entity is associated with only one record of another entity.
+
+### Example
+
+```text
+Student  →  Address
