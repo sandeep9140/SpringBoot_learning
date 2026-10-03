@@ -431,3 +431,28 @@ In a One-to-One relationship, one record of an entity is associated with only on
 
 ```text
 Student  →  Address
+==================================================================
+====================================================================
+
+
+# Cascading and @Transactional in Spring Boot JPA
+
+## 📌 Overview
+
+In Spring Boot with JPA, **Cascading** and **@Transactional** are important concepts used while working with database relationships and multiple database operations.
+
+- **Cascading** controls how operations on a parent entity are propagated to related child entities.
+- **@Transactional** defines a transaction boundary and helps maintain database consistency using commit and rollback.
+
+---
+
+## 1. Cascading in JPA
+
+Cascading means that an operation performed on a **parent entity** can automatically be applied to its related **child entities**.
+
+### Example
+
+```text
+Department
+    |
+    └── Employee
